@@ -14,3 +14,7 @@ The starter intentionally has seven tests with exactly three failures. Do not fi
 ## Safety
 
 Use only the supplied synthetic data. Never paste confidential code, customer information, credentials, unpublished specifications, or internal Intel material into the repository or an AI prompt.
+
+## Test add new text
+
+Hi bro
