@@ -16,7 +16,8 @@ def decide_disposition(
     invalid = [record.device_id for record in records if validate_record(record)]
     if invalid:
         return "HOLD", ("one or more records are invalid",)
-    # Intentional workshop defect: duplicate device identifiers are not checked.
+    if len({record.device_id for record in records}) != len(records):
+        return "HOLD", ("duplicate device identifiers detected",)
     yield_percent = calculate_yield(records)
     if yield_percent >= target_yield:
         return "RELEASE", ("target yield achieved",)
